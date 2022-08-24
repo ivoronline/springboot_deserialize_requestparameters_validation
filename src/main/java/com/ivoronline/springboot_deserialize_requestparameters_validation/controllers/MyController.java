@@ -22,8 +22,8 @@ public class MyController {
   // HELLO
   //==================================================================
   @ResponseBody
-  @RequestMapping("/Hello")
-  public String hello(@Valid PersonDTO personDTO) {
+  @RequestMapping("Hello")
+  String hello(@Valid PersonDTO personDTO) {
     return "Hello " + personDTO.name;
   }
 
