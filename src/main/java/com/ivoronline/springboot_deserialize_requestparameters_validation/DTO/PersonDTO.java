@@ -6,13 +6,14 @@ import javax.validation.constraints.NotNull;
 public class PersonDTO {
 
   //PROPERTIES
-  @NotBlank(message = "Name is mandatory")
+  @NotNull (message = "Name Parameter is missing")   //Optional Message
+  @NotBlank(message = "Name should not be empty"  )  //Optional Message
   public String  name;
 
-  @NotNull
+  @NotNull(message = "Age Parameter is missing")     //Optional Message
   public Integer age;
 
-  //SETTERS (used for deserialization)
+  //SETTERS (Dor Deserialization from HTTP Request Parameters)
   public void setName(String  name) { this.name = name; }
   public void setAge (Integer age ) { this.age = age;   }
 
